@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //--------------------------------------
+  class Shape{
+
+      static instances = 0;
+      constructor(length,width) {
+
+          Shape.instances++;
+
+          this.length = length;
+          this.width =  width;
+      }
+            area = function (){
+            return this.width*this.length;
+        }
+    }
+
+    const rectangle = new Shape(30,10);
+    document.write(rectangle.area()+'</br>');
+
+    document.write("Number of instances "+Shape.instances+'</br>');
+    const square = new Shape(10,10);
+    document.write(square.area()+'</br>');
+
+    document.write("Number of instances "+Shape.instances+'</br>');
+
+    class Cube extends Shape{
+
+        constructor(length,width,faces) {
+            super(length,width);
+            this.faces = faces;
+        }
+        surfaceArea = function (){
+            return this.length*this.width*this.faces;
+        }
+    }
+
+    const cube = new Cube(10,20,6);
+    document.write("Surface Area "+cube.surfaceArea()+'</br>');
+    document.write("Number of instances "+Cube.instances+'</br>');
+    document.write("Area of one face  "+cube.area()+'</br>');
+    </script>
+</body>
+</html>

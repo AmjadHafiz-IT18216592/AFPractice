@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+//normal function-------
+    /*
+    function calcArea(callback){
+
+        length = 100;
+        width = 20;
+        let area = 0;
+        setTimeout( function (){
+           area  = width*length;
+          callback(area);
+        }, 2000);
+    }
+    calcArea(function (area){
+        document.write("Area is "+area+'</br>');
+    });
+     */
+
+// arrow function
+ calcArea =callback =>{
+
+    length = 100;
+    width = 20;
+    let area = 0;
+    setTimeout( () =>{
+        area  = width*length;
+        callback(area);
+    }, 2000);
+}
+calcArea((area)=>{
+    document.write("Inside arrow function "+'</br>');
+    document.write("Area is "+area+'</br>');
+});
+</script>
+
+</body>
+</html>

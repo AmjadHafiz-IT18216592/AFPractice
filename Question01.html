@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //setTimeoutFunction------------------------------------------
+   /*
+    function getValue(){
+        let value = 10;
+        setTimeout(function(){
+            value =  value * 30;
+        },1000);
+        return value;
+    }
+
+    document.write(getValue()+'</br>');
+    */
+
+    //callback-------------------------------------------------
+   /*
+    function getValue(callback){
+        let value = 10;
+        setTimeout(function(){
+            value = value * 30;
+            callback(value);
+        },1000);
+    }
+
+    getValue(function (value){
+        document.write(value+'</br>');
+    });
+    */
+    //Promisses-------------------------------------------------
+    /*
+    function getValue(){
+        let value = 10;
+
+      return new Promise( function (resolve, reject){  //return promis
+          setTimeout(function(){    //resolve method inside set Timout method
+              value = value * 10;
+              resolve(value);  // call getValue method when resolve called
+          },1000);
+      });
+    }
+
+    getValue().then(function (value){  //ersolve call this method
+        document.write(value+'</br>');
+    });
+
+     */
+    //asyc and await
+
+    function getValue(){
+        let value = 10;
+
+        return new Promise( function (resolve, reject){
+            setTimeout(function(){
+                value = value * 12;
+                resolve(value);
+            },1000);
+        });
+    }
+
+  async  function getNewvalue(){
+        let newval = await getValue();
+        return newval;
+    }
+
+    getNewvalue().then(function (value){
+        document.write(value+'</br>');
+    });
+
+</script>
+</body>
+</html>
